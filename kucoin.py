@@ -18,7 +18,7 @@ driver.get('https://www.kucoin.com/')
 driver.find_element_by_xpath('/html/body/div[2]/div/div/div[1]/div/div/div/div/div[2]/div[1]/div[4]/a[1]/div').click()
 
 
-
+#enter your email and password here 
 email_add =("")
 password = ("")
 
@@ -78,6 +78,7 @@ def killbot() :
         element = driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div/div[1]/div[4]/div[1]/div[2]/div/span').text    
         element = element.rstrip("%")
         element = float(element)
+        # change this value if you want profit to be taken at an amount other than 1%
         if element >= +1.0:
             print('Green!')
             #shutdownbutton
@@ -93,6 +94,7 @@ def killbot() :
         else:
             time.sleep(3)
             print("current: ", element)
+        # change this value if you want losses to be taken at an amount other than -4.5%    
         if element < -4.5:
             print('You are fucked boi time to sell')
             #shutdownbutton
